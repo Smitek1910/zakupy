@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Zakupów</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="mb-4 text-center">Lista Zakupów</h1>
+
+                <!-- wejście produktu -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" id="productInput" class="form-control" placeholder="Nazwa produktu...">
+                            <button type="button" class="btn btn-success" id="addBtn">Dodaj produkt</button>
+                        </div>
+
+                        <!-- przycisk do filtrowania-->
+                        <div class="input-group mb-3">
+                            <input type="text" id="filterInput" class="form-control" placeholder="Filtruj listę...">
+                            <button type="button" class="btn btn-info" id="filterBtn">Filtruj</button>
+                            <button type="button" class="btn btn-secondary" id="clearFilterBtn">Wyczyść filtr</button>
+                        </div>
+
+                        <!-- główne przyciski do zarządzania listą -->
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-primary" id="prependBtn">Dodaj na początku</button>
+                            <button type="button" class="btn btn-primary" id="appendBtn">Dodaj na końcu</button>
+                            <button type="button" class="btn btn-warning" id="removeLastBtn">Usuń ostatni</button>
+                            <button type="button" class="btn btn-danger" id="clearBtn">Wyczyść listę</button>
+                        </div>
+
+                        <!-- dodatkowe przyciski -->
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-secondary" id="restoreBtn">Przywróć listę</button>
+                            <button type="button" class="btn btn-info" id="sortBtn">Sortuj alfabetycznie</button>
+                            <button type="button" class="btn btn-success" id="colorBtn">Pokoloruj co drugi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- lista zakupów -->
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h5 class="mb-0">Produkty do kupienia</h5>
+                    </div>
+                    <ul id="shoppingList" class="list-group list-group-flush">
+                        <li class="list-group-item">Mleko</li>
+                        <li class="list-group-item">Chleb</li>
+                        <li class="list-group-item">Masło</li>
+                    </ul>
+                </div>
+
+                <!-- instrukcje -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Jak korzystać?</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Dodaj produkt:</strong> Wpisz nazwę i naciśnij przycisk lub Enter</li>
+                            <li><strong>Kliknij na element:</strong> Aby go edytować</li>
+                            <li><strong>Przeciągaj elementy:</strong> Aby zmienić ich kolejność</li>
+                            <li><strong>Filtruj:</strong> Wpisz frazę i naciśnij Filtruj</li>
+                            <li><strong>Sortuj:</strong> Elementy będą posortowane alfabetycznie</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
