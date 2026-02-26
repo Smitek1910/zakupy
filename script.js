@@ -3,6 +3,14 @@ $(document).ready(function() {
     const $productInput = $('#productInput');
     const $filterInput = $('#filterInput');
 
+    // Funkcja inicjalizująca listę - dodaje eventy do istniejących elementów
+    function initializeList() {
+        $shoppingList.find('li').each(function() {
+            attachItemEvents($(this));
+        });
+        initDragDrop();
+    }
+
     initializeList();
 
     // dodawanie produktów
@@ -233,17 +241,11 @@ $(document).ready(function() {
             return 0;
         });
 
-        // wstawianie posortowanych elementów z animacją
+// wstawianie posortowanych elementów z animacją
         $shoppingList.fadeOut(400, function() {
             $shoppingList.empty();
             
-            $(this).find(function() {
-                // dodawanie posortowanych elementów
-            }).each(function() {
-                $(this).appendTo($shoppingList);
-            });
-
-            // prawidłowe wstawianie
+            // wstawianie posortowanych elementów
             $.each($items, function(_, item) {
                 $shoppingList.append(item);
             });
